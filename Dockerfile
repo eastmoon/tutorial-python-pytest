@@ -1,4 +1,4 @@
-FROM python:slim
+FROM python:slim-bullseye
 
 RUN \
     apt-get update -y && \
