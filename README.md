@@ -17,7 +17,11 @@ c. 使用 python 啟動 pytest 並建立必要的轉換程序
 
 ## BDD 框架
 
-執行 ```pytest .\test\...\*.py``` 檔，此檔案會基於 pytest 規範需要引入對應 feature 目錄的 BDD 檔案
+執行 ```pytest .\test\...\*.py``` 檔，此檔案會基於 pytest 規範需要引入對應 feature 目錄的 BDD 檔案。
+
+但依據實務與案例經驗，BDD 進入點檔案具有高重複性，該檔案主要用於宣告應執行的 ```scenarios``` 與要引用的函式庫來源，並以此作為 pytest 目標；對此，設計一個基於 BDD 文檔來生成進入點檔案，並可執行 pytest 調用的 ```invoke_bdd.py``` 來執行 ```*.feature``` 的前置處理與執行，此外亦可基於團隊需要增加解析規則。
+
+執行 ```python invoke_bdd.py arguments``` 來執行目標 ```arguments.feature``` 檔案 
 
 ## 驗證項目
 
